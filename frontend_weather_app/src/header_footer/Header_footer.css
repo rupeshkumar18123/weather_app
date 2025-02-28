@@ -1,6 +1,6 @@
 
 .header{
-    width: 96vw;
+    width: 98vw;
     height: 6vh;
     background-color: rgb(23, 28, 28);
     border-radius: 2vh;
@@ -13,8 +13,17 @@
     color: aliceblue;
     font-size: larger;
     font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .background_tranparent{
     filter: blur(5px);
+}
+.icon_margin{
+   
+    margin-right: 0.5rem;
+   
 }

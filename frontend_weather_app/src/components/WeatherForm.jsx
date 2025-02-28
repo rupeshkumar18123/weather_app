@@ -1,9 +1,12 @@
 
 import React from 'react'
+import "./Component.css"
 
 function WeatherForm() {
   return (
-    <div>WeatherForm</div>
+    <div>
+    
+    </div>
   )
 }
 
