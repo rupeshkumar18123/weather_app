@@ -2,7 +2,7 @@
 .header{
     width: 98vw;
     height: 6vh;
-    background-color: rgb(23, 28, 28);
+    background-color: rgba(117, 229, 229, 0.456);
     border-radius: 2vh;
     display: flex;
     justify-content: center;

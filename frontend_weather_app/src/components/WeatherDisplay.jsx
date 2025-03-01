@@ -1,8 +1,16 @@
 import React from 'react'
+import "./Component.css"
 
 function WeatherDisplay() {
   return (
-    <div>WeatherDisplay</div>
+    <div className='main_display'>
+     <div className='background_layer'>
+ </div>
+ <div className='content'>
+display content
+ </div>
+ 
+      </div>
   )
 }
 
