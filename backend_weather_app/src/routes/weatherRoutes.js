@@ -1,17 +1,24 @@
-const axois = require("axios");
-require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const {fetchWeatherData} = require("../model/fetchWeather");
+const router = express.Router();
+router.use(express.json());
+router.use(cors());
 
-const weather_api_key = process.env.WEATHER_API;
-const BASE_URL="https://api.openweathermap.org/data/2.5";
+router.post("/fetchWeather",async (req,resp)=>{
+    
+    try {
+         const {city} = req.body;
+         if (!city) return resp.status(400).json({ msg: "City is required" });
 
-const fetchWeatherData = async (city)=>{
-    const currentWeather = await axois.get(`${BASE_URL}/weather?q=${city}&appid=${weather_api_key}&units=metric`);
-    const forecast = await axois.get(`${BASE_URL}/forecast?q=${city}&appid=${weather_api_key}&units=metric`);
+         const weatherData = await fetchWeatherData(city);
+         resp.json(weatherData);
+        
+     } catch (error) {
+        resp.status(500).json({msg:"Failed to fetch weather data"})
+        
+     }
 
-    return {
-        current:currentWeather.data,
-        forecast:forecast.data,
-    };
-}
+});
 
-module.exports = {fetchWeatherData};
+module.exports = router;
