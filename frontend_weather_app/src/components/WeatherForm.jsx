@@ -12,8 +12,9 @@ function WeatherForm({ onSearch }) {
     if (city.trim() === "") return;
       
     axios.post(`${API_URL}/api/fetchWeather`,{city})
-    .then((req,resp)=>{
-      console.log(resp.data);
+    .then(result=>{
+      console.log(result);
+      setWeatherData(result.data);
     }).catch(err=>{
       console.log(err);
     })

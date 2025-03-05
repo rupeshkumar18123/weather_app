@@ -29,7 +29,7 @@ function WeatherDisplay() {
 
         <h3 className="mt-6 text-xl">Forecast</h3>
         <div className="grid grid-cols-6 gap-4">
-            {weather.forecast.list.slice(0, 6).map((day, index) => (
+            {weatherdata.forecast.list.slice(0, 6).map((day, index) => (
                 <div key={index} className="bg-gray-800 p-3 rounded-md">
                     <p>{new Date(day.dt_txt).toLocaleDateString("en-US", { weekday: "long" })}</p>
                     <p>{Math.round(day.main.temp)}°C</p>
