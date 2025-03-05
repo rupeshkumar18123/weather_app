@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import "./Component.css"
-
-function WeatherDisplay({ weather }) {
+import DataContext from '../context/DataContext';
+function WeatherDisplay() {
   const {weatherdata} = useContext(DataContext)
-  if (!weather) return <p>No weather data available</p>;
+  if (!weatherdata) return <p>No weather data available</p>;
   return (
     <div className='main_display'>
       <div className='background_layer'>
@@ -16,15 +16,15 @@ function WeatherDisplay({ weather }) {
 
 
     <div className="bg-gray-900 text-white p-6 rounded-lg">
-        <h2 className="text-3xl">{weather.current.name}</h2>
-        <p className="text-gray-400">{weather.current.weather[0].description}</p>
-        <h3 className="text-5xl">{weather.current.main.temp}°C</h3>
+        <h2 className="text-3xl">{weatherdata.current.name}</h2>
+        <p className="text-gray-400">{weatherdata.current.weather[0].description}</p>
+        <h3 className="text-5xl">{weatherdata.current.main.temp}°C</h3>
 
         <div className="flex justify-between mt-4">
-            <div>🌡️ Feels Like: {weather.current.main.feels_like}°C</div>
-            <div>💧 Humidity: {weather.current.main.humidity}%</div>
-            <div>💨 Wind Speed: {weather.current.wind.speed} km/h</div>
-            <div>☀️ UV Index: {weather.current.uvi || "N/A"}</div>
+            <div>🌡️ Feels Like: {weatherdata.current.main.feels_like}°C</div>
+            <div>💧 Humidity: {weatherdata.current.main.humidity}%</div>
+            <div>💨 Wind Speed: {weatherdata.current.wind.speed} km/h</div>
+            <div>☀️ UV Index: {weatherdata.current.uvi || "N/A"}</div>
         </div>
 
         <h3 className="mt-6 text-xl">Forecast</h3>

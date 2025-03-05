@@ -1,12 +1,10 @@
 
-import React, { createContext, useContext, useState } from 'react'
+import React, {  useState } from 'react'
 import Header from '../header_footer/Header'
 import "./Home.css"
 import WeatherForm from '../components/WeatherForm'
 import WeatherDisplay from '../components/WeatherDisplay'
-
-
-const DataContext = createContext();
+import DataContext from '../context/DataContext'
 function Home() {
   const [weatherdata,setWeatherData] = useState("");
   return (
