@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import "./Component.css";
 
 function WeatherForm({ onSearch }) {
   const [city, setCity] = useState("");
+  const {setWeatherData} = useContext(DataContext);
 
   const handleSearch = () => {
     if (city.trim() === "") return;
-    onSearch(city);
+    setWeatherData(city);
   };
+
 
   return (
     <div className="weather-form">

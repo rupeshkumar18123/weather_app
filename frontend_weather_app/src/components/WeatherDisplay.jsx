@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Component.css"
 
 function WeatherDisplay({ weather }) {
+  const {weatherdata} = useContext(DataContext)
   if (!weather) return <p>No weather data available</p>;
   return (
     <div className='main_display'>
