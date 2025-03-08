@@ -3,7 +3,7 @@ import { FiSearch } from "react-icons/fi";
 import "./Component.css";
 import DataContext from "../context/DataContext";
 import axios from "axios"
-const API_URL ="https://weather-m1ksqx2yn-rupeshkumar18123s-projects.vercel.app"
+const API_URL ="https://weather-app-git-main-rupeshkumar18123s-projects.vercel.app"
 function WeatherForm({ onSearch }) {
   const [city, setCity] = useState("");
   const {setWeatherData} = useContext(DataContext);
