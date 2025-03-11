@@ -4,6 +4,8 @@ import "./Component.css";
 import DataContext from "../context/DataContext";
 import axios from "axios"
 const API_URL ="https://weather-app-lac-chi-90.vercel.app"
+
+//getting url problem so deployment is failed
 function WeatherForm({ onSearch }) {
   const [city, setCity] = useState("");
   const {setWeatherData} = useContext(DataContext);
