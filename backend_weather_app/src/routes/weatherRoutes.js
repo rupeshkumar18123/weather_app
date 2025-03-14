@@ -11,9 +11,9 @@ router.options("*", cors());
 router.post("/fetchWeather",async (req,resp)=>{
     
     try {
-        const {city} =  "rajkot";
-        //  const {city} =  req.body;
-        //  if (!city) return resp.status(400).json({ msg: "City is required" });
+        // const {city} =  "rajkot";
+         const {city} =  req.body;
+         if (!city) return resp.status(400).json({ msg: "City is required" });
 
          const weatherData = await fetchWeatherData(city);
          resp.json(weatherData);
