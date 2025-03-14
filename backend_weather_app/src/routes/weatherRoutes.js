@@ -19,7 +19,7 @@ router.post("/fetchWeather",async (req,resp)=>{
          resp.json(weatherData);
         
      } catch (error) {
-        resp.status(500).json({msg:"Failed to fetch weather data"})
+        resp.status(500).json({msg:"Failed to fetch weather data",error})
         
      }
 
