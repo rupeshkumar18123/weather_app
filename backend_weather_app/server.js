@@ -1,6 +1,12 @@
 const express = require("express");
-// const cors = require("cors");
+const cors = require("cors");
 const app =express();
+
+app.use(cors({
+    origin: "*", // Allows requests from any origin
+    methods: "GET, POST, PUT, DELETE, OPTIONS",
+    
+}));
 app.use(express.json());
 
 const weatherRoute = require("./src/routes/weatherRoutes");
