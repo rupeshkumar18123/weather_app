@@ -1,12 +1,12 @@
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const {fetchWeatherData} = require("../model/fetchWeather");
 const router = express.Router();
 router.use(express.json());
-router.use(cors());
+// router.use(cors());
 
 // Handle preflight requests
-router.options("*", cors());
+// router.options("*", cors());
 
 router.post("/fetchWeather",async (req,resp)=>{
     

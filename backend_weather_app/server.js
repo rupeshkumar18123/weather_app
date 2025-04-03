@@ -1,21 +1,21 @@
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const app =express();
 app.use(express.json());
 
 const weatherRoute = require("./src/routes/weatherRoutes");
 
 // Enable CORS for all origins
-app.use(
-    cors({
-      origin: "*",  // Allows requests from any origin
-      methods: "GET, POST, PUT, DELETE, OPTIONS",
-      allowedHeaders: "Content-Type, Authorization",
-    })
-  );
+// app.use(
+//     cors({
+//       origin: "*",  // Allows requests from any origin
+//       methods: "GET, POST, PUT, DELETE, OPTIONS",
+//       allowedHeaders: "Content-Type, Authorization",
+//     })
+//   );
   
   // Handle preflight requests
-  app.options("*", cors());
+  // app.options("*", cors());
 app.get("/",(req,resp)=>{
 resp.send("this is weather app server page");
 });
